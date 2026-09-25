@@ -2,7 +2,7 @@
 
 > **Este repositório foi criado em 25/09/2026 como parte de um teste controlado para avaliar a capacidade de detecção de menções à marca VIVO por ferramentas de Brand Protection / CTI.**
 > **Nenhum dado é real. Nenhuma promoção existe. Nenhum golpe foi executado.**
-> **Responsável: [Lyon](https://github.com/lyonzin) — HARDWAY Cyber Security**
+> **Responsável: [Ailton Rocha](https://github.com/lyonzin)**
 
 ---
 
@@ -129,6 +129,7 @@ docker compose up -d
 
 # ⚠️ REPOSITÓRIO DE TESTE — NADA AQUI É REAL ⚠️
 
-> Criado exclusivamente para testar se ferramentas de monitoramento de marca (Apura BTTng)
+> Criado exclusivamente para testar se ferramentas de monitoramento de marca
 > conseguem detectar este tipo de repositório em tempo hábil.
-> Data de criação: 25/09/2026 | Responsável: github.com/lyonzin | HARDWAY Cyber Security
+> Nenhuma promoção real. Nenhum link funcional. Nenhum dado coletado.
+> Data de criação: 25/09/2026 | Responsável: github.com/lyonzin — Ailton Rocha
