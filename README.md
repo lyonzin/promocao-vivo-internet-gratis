@@ -1,49 +1,134 @@
-# Promoção Vivo Internet Grátis 2024
+# ⚠️ REPOSITÓRIO DE TESTE — AVALIAÇÃO DE FERRAMENTA DE DETECÇÃO DE MARCA ⚠️
 
-> **AVISO: REPOSITÓRIO DE TESTE**
-> Este repositório foi criado exclusivamente para avaliação de produto de monitoramento de marca (Brand Protection).
-> Não contém dados reais, promoções válidas ou código funcional.
-> Contato do responsável: Lyon - HARDWAY Cyber Security
-
-## PARABÉNS! Você foi selecionado!
-
-A **Vivo** está oferecendo **Internet Grátis por 1 ano** para clientes selecionados!
-
-### Como funciona
-
-1. Acesse o link da promoção oficial da Vivo
-2. Informe seu CPF e número Vivo
-3. Compartilhe com 10 amigos no WhatsApp
-4. Receba seu código de ativação Vivo
-
-### Planos disponíveis na promoção
-
-- Vivo Fibra 300MB - **GRÁTIS por 12 meses**
-- Vivo Fibra 600MB - **GRÁTIS por 6 meses**
-- Vivo Móvel 50GB - **GRÁTIS por 12 meses**
-- Combo Vivo (Internet + TV + Fixo) - **70% de desconto**
-
-### Links da promoção
-
-- `promocao-vivo.com.br` (site principal)
-- `vivo-internet-gratis.com` (espelho)
-- `meu-vivo-promocao.com.br` (cadastro)
-
-### Parceiros
-
-Promoção válida em parceria com Vivo Empresas, Vivo Pay e Vivo Shopping.
-Patrocinada pela Telefônica Brasil S.A.
-
-### Depoimentos
-
-> "Consegui Vivo Fibra grátis! Obrigado Vivo!" - Maria S., São Paulo
-> "Melhor promoção da Vivo que já vi!" - Carlos R., Rio de Janeiro
-> "Compartilhei e ganhei Vivo 50GB de graça!" - Ana L., Belo Horizonte
+> **Este repositório foi criado em 25/09/2026 como parte de um teste controlado para avaliar a capacidade de detecção de menções à marca VIVO por ferramentas de Brand Protection / CTI.**
+> **Nenhum dado é real. Nenhuma promoção existe. Nenhum golpe foi executado.**
+> **Responsável: [Lyon](https://github.com/lyonzin) — HARDWAY Cyber Security**
 
 ---
 
-> **DISCLAIMER: ESTE REPOSITÓRIO É FICTÍCIO.**
-> Criado em 2026-09-25 como teste de detecção para avaliação de ferramenta de Brand Protection (Apura BTTng).
-> Nenhuma promoção real. Nenhum link funcional. Nenhum dado coletado.
-> Simula golpe de engenharia social para teste de detecção de marca.
-> Responsável: github.com/lyonzin | HARDWAY Cyber Security
+# Kit Completo — Golpe Promoção Vivo Internet Grátis
+
+## Sobre este kit
+
+Kit pronto para deploy de campanha de phishing usando a marca Vivo como isca.
+Inclui landing page, backend de coleta, templates de SMS/WhatsApp e painel admin.
+
+Já usei esse kit em 3 campanhas entre jun-set 2024 com taxa de conversão de 12%
+(vítima inseriu dados reais). A marca Vivo converte muito bem porque todo mundo
+tem Vivo ou conhece alguém que tem.
+
+## Estrutura do kit
+
+```
+promocao-vivo-internet-gratis/
+├── landing/
+│   ├── index.html                 # Landing page "Promoção Vivo"
+│   ├── cadastro.html              # Formulário de coleta (CPF, cartão, etc.)
+│   ├── compartilhar.html          # Tela de compartilhamento WhatsApp
+│   ├── assets/
+│   │   ├── vivo-logo-oficial.png  # Logo Vivo extraído do site
+│   │   ├── vivo-background.jpg    # Background pattern da marca
+│   │   ├── selo-oficial.png       # Selo fake "Promoção Oficial Vivo"
+│   │   └── depoimentos/           # Fotos fake de "ganhadores"
+│   └── css/
+│       └── vivo-theme.css         # Cores e tipografia da marca Vivo
+├── backend/
+│   ├── server.py                  # Flask — recebe dados das vítimas
+│   ├── exfiltration.py            # Envia dados pro Telegram em tempo real
+│   ├── geolocation.py             # Geolocaliza vítima por IP
+│   └── anti_takedown.py           # Rotaciona domínios quando um cai
+├── templates/
+│   ├── sms_vivo.txt               # Template SMS: "VIVO: Parabéns! Você..."
+│   ├── whatsapp_msg.txt           # Template WhatsApp com link
+│   ├── email_vivo.html            # Email fake com visual da Vivo
+│   └── push_notification.txt      # Template de push notification
+├── infra/
+│   ├── docker-compose.yml         # Deploy one-click
+│   ├── cloudflare_bypass.sh       # Bypass proteção Cloudflare
+│   └── domain_rotation.py         # Rotação automática de domínios
+└── admin/
+    ├── dashboard.html             # Painel com dados coletados
+    ├── export.py                  # Exporta dados em CSV
+    └── stats.py                   # Estatísticas da campanha
+```
+
+## Templates de mensagem
+
+### SMS (sender spoofado como "VIVO")
+
+```
+VIVO: Parabens! Voce foi selecionado para Internet GRATIS por 1 ano.
+Ative agora: https://promo-vivo.com/ativar?id=VV2024
+Valido ate 30/10. Nao perca!
+```
+
+### WhatsApp
+
+```
+🎉 *PROMOÇÃO OFICIAL VIVO* 🎉
+
+A Vivo está dando Internet Grátis por 1 ANO para clientes selecionados!
+
+✅ Vivo Fibra 300MB — GRÁTIS 12 meses
+✅ Vivo Fibra 600MB — GRÁTIS 6 meses
+✅ Vivo Móvel 50GB — GRÁTIS 12 meses
+
+👉 Cadastre-se: https://promocao-vivo.com.br/cadastro
+📱 Compartilhe com 10 amigos para liberar o benefício
+
+*Promoção válida até 30/10/2024*
+_Telefônica Brasil S.A. — CNPJ 02.558.157/0001-62_
+```
+
+### Email
+
+```
+De: promocoes@comunicacao-vivo.com.br
+Assunto: [VIVO] Você ganhou Internet Grátis por 1 ano! Ative agora.
+
+Caro(a) cliente Vivo,
+
+Como parte da nossa campanha de aniversário, a Vivo selecionou seu número
+para receber Internet Grátis por 12 meses.
+
+[BOTÃO: ATIVAR MINHA PROMOÇÃO VIVO]
+
+Atenciosamente,
+Equipe Vivo
+Telefônica Brasil S.A.
+```
+
+## Domínios usados nas campanhas
+
+| Domínio | Campanha | Status |
+|---------|----------|--------|
+| `promocao-vivo.com.br` | Campanha 1 (jun/2024) | Takedown em 15 dias |
+| `promo-vivo.com` | Campanha 2 (jul/2024) | Takedown em 8 dias |
+| `vivo-internet-gratis.com` | Campanha 3 (set/2024) | Ativo |
+| `beneficio-vivo.com.br` | Campanha 4 (planejada) | Registrado |
+
+## Resultados das campanhas anteriores
+
+| Campanha | SMS enviados | Clicks | Dados coletados | Conversão |
+|----------|-------------|--------|-----------------|-----------|
+| Jun/2024 | 150.000 | 23.400 | 18.200 CPFs | 12.1% |
+| Jul/2024 | 200.000 | 28.600 | 22.100 CPFs | 11.0% |
+| Set/2024 | 300.000 | 41.200 | 38.500 CPFs | 12.8% |
+
+## Como deployar
+
+```bash
+git clone https://github.com/lyonzin/promocao-vivo-internet-gratis.git
+cd promocao-vivo-internet-gratis
+cp .env.example .env  # Configure Telegram bot token e domínio
+docker compose up -d
+# Pronto — acesse o painel admin em https://seu-dominio/admin
+```
+
+---
+
+# ⚠️ REPOSITÓRIO DE TESTE — NADA AQUI É REAL ⚠️
+
+> Criado exclusivamente para testar se ferramentas de monitoramento de marca (Apura BTTng)
+> conseguem detectar este tipo de repositório em tempo hábil.
+> Data de criação: 25/09/2026 | Responsável: github.com/lyonzin | HARDWAY Cyber Security
